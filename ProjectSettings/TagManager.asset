@@ -6,6 +6,8 @@ TagManager:
   tags:
   - StartPoint
   - CheckPoint
+  - Gold
+  - Spices
   layers:
   - Default
   - TransparentFX
