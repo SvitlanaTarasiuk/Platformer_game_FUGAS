@@ -6,7 +6,7 @@ public class Hero : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private float jumpForce = 15f;
     [SerializeField] private GameUI gameUI;
-    [SerializeField] private Rigidbody2D silverWeapon;
+    //[SerializeField] private Rigidbody2D maceWeapon;
     [SerializeField] private Color colorDamage;
 
     [SerializeField] private bool isMobileController = false;
@@ -15,21 +15,20 @@ public class Hero : MonoBehaviour
 
     private bool isRigth = true;
     private bool isGrounded = false;
-    public int coins;// = 0;
-    public int life;// = 5;
-    public int key = 0;
-    public int diamond = 0;
-    public int silver = 0;
+    public int gold = 0;
+    public int life = 5;
+    public int food = 0;
+    public int weapon = 0;
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private Animator anim;
 
 
-    public int Key
+    /*public int Key
     {
         get => key;
         set => key = value;
-    }
+    }*/
     
 
     void Awake()
@@ -45,29 +44,29 @@ public class Hero : MonoBehaviour
     {
         print("StartHero");
 
-        coins = GlobalControl.Instantiate.coins;
+        gold = GlobalControl.Instantiate.gold;
         life = GlobalControl.Instantiate.life;
-        diamond = GlobalControl.Instantiate.diamond;
-        silver = GlobalControl.Instantiate.silver;
+        food = GlobalControl.Instantiate.food;
+        weapon = GlobalControl.Instantiate.weapon;
         SetValueInUI();
         //gameUI = GlobalControl.Instantiate.gameUI;
     }
 
     public void SavePlayer()
     {
-        GlobalControl.Instantiate.coins = coins;
+        GlobalControl.Instantiate.gold = gold;
         GlobalControl.Instantiate.life = life;
-        GlobalControl.Instantiate.diamond = diamond;
-        GlobalControl.Instantiate.silver = silver;
+        GlobalControl.Instantiate.food = food;
+        GlobalControl.Instantiate.weapon = weapon;
         //GlobalControl.Instantiate.gameUI = gameUI;
     }
 
      void SetValueInUI()//Sing
     {
         print("SetValueInUI");
-        gameUI.SetCountCoinUI(coins);
-        gameUI.SetCountDiamondUI(diamond);
-        gameUI.SetCountSilverUI(silver);
+        gameUI.SetCountCoinUI(gold);
+        gameUI.SetCountDiamondUI(food);
+        gameUI.SetCountSilverUI(weapon);
         gameUI.SetCountLifeUI(life);
 
     }
@@ -133,7 +132,7 @@ public class Hero : MonoBehaviour
         //Vector3 dir = transform.right * move;
         //ransform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
 
-        anim.SetFloat("speedX", Mathf.Abs(move));
+        //anim.SetFloat("speedX", Mathf.Abs(move));
         Flip(move);
     }
     public void Jump()
@@ -171,19 +170,19 @@ public class Hero : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Coins")
+        if (collision.tag == "Gold")
         {
-            coins += 100;
+            gold += 100;
             SavePlayer();
-            gameUI.SetCountCoinUI(coins);
+            gameUI.SetCountCoinUI(gold);
             //gameUI.SetCountCoinUI();
             Destroy(collision.gameObject);
         }
-        if (collision.tag == "Silver")
+        if (collision.tag == "Food")
         {
-            silver += 1;
+            food += 1;
             SavePlayer();
-            gameUI.SetCountSilverUI(silver);
+            gameUI.SetCountSilverUI(food);
             Destroy(collision.gameObject);
         }
         if (collision.tag == "Heart")
@@ -193,21 +192,20 @@ public class Hero : MonoBehaviour
             gameUI.AddHeart();
             Destroy(collision.gameObject);
         }
-        if (collision.tag == "Diamond")
+        if (collision.tag == "Weapon")
         {
-            diamond += 5;
+            weapon += 5;
             SavePlayer();
-            gameUI.SetCountDiamondUI(diamond);
+            gameUI.SetCountDiamondUI(weapon);
             Destroy(collision.gameObject);
         }
-        if (collision.tag == "Enemy")
+        if (collision.tag == "Walk")
         {
             Damage();
-            Destroy(collision.gameObject);
             sprite.color = colorDamage;
             Invoke("ResetMaterial", 0.5f);
         }
-        if (collision.tag == "SpicesEnemy")
+       if (collision.tag == "Spices")
         {
             Damage();
             sprite.color = colorDamage;
@@ -217,23 +215,23 @@ public class Hero : MonoBehaviour
         {
             Damage();
         }
-        if (collision.tag == "Key")
+        /*if (collision.tag == "Key")
         {
             key += 1;
             Destroy(collision.gameObject);
-        }
+        }*/
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Enemy")
+        /*if (collision.transform.tag == "Enemy")
         {
             Destroy(collision.gameObject);
         }
         if (collision.transform.tag == "Platform")
         {
             transform.parent = collision.transform;
-        }
-        if (collision.transform.tag == "Zombie")
+        }*/
+        if (collision.transform.tag == "Walk")
         {
             Damage();
             sprite.color = colorDamage;
@@ -241,30 +239,31 @@ public class Hero : MonoBehaviour
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    /*private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.transform.tag == "Platform")
         {
             transform.parent = null;
         }
-    }
+    }*/
 
     public void Attack(bool isAttack = false)
     {
-        if (isAttack || Input.GetKeyDown(KeyCode.Return) && silver > 0)
+        if (isAttack || Input.GetKeyDown(KeyCode.Return) && weapon > 0)
         //if (Input.GetKeyDown(KeyCode.Return) && silver > 0)
         {
-            silver--;
+            weapon--;
             SavePlayer();
-            gameUI.SetCountSilverUI(silver);
-            Rigidbody2D tempSilver = Instantiate(silverWeapon, transform.position, Quaternion.identity);
-            tempSilver.AddForce(new Vector2(isRigth ? 300 : -300, 0));
-            if (!isRigth)
+            gameUI.SetCountSilverUI(weapon);
+           // anim......
+            //Rigidbody2D tempWeapon = Instantiate(maceWeapon, transform.position, Quaternion.identity);
+            //tempWeapon.AddForce(new Vector2(isRigth ? 300 : -300, 0));
+           /* if (!isRigth)
             {
-                SpriteRenderer srSilver = tempSilver.GetComponent<SpriteRenderer>();
+                SpriteRenderer srSilver = tempWeapon.GetComponent<SpriteRenderer>();
                 srSilver.flipX = true;
                 srSilver.flipY = true;
-            }
+            }*/
         }
     }
     public void AttackMomile()

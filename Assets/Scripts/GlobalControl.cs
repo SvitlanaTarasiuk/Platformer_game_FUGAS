@@ -4,11 +4,11 @@ using TMPro;
 
 public class GlobalControl: MonoBehaviour
 {
-    public int coins=0;
-    public int life=5;
-    public int diamond=0;
-    public int silver=0;
-    public int heart=5;
+    public int gold =0;
+    public int life =5;
+    public int food =0;
+    public int weapon =0;
+    public int heart =5;
     //public TextMeshProUGUI textCoint;
     //public TextMeshProUGUI textDiamond;
     //public TextMeshProUGUI textSilver;
@@ -35,10 +35,10 @@ public class GlobalControl: MonoBehaviour
     public void ResetData()
     {
         print("ResetData");
-        coins = 0;
+        gold = 0;
         life = 5;
-        diamond = 0;
-        silver = 0;
+        food = 0;
+        weapon = 0;
         heart = 5;
         
     }

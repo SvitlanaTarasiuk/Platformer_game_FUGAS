@@ -10,9 +10,9 @@ public class GameUI : MonoBehaviour
     [SerializeField] private GameObject panelTheEnd;
     [SerializeField] private GameObject panelSetting;
 
-    [SerializeField] private TextMeshProUGUI textCoin;
-    [SerializeField] private TextMeshProUGUI textDiamond;
-    [SerializeField] private TextMeshProUGUI textSilver;
+    [SerializeField] private TextMeshProUGUI textGold;
+    [SerializeField] private TextMeshProUGUI textFood;
+    [SerializeField] private TextMeshProUGUI textWeapon;
     [SerializeField] private int idLevel;
     private int heart = 5;
 
@@ -70,20 +70,19 @@ public class GameUI : MonoBehaviour
         heart = life;
         UpdateHeart();
     }
-    public void SetCountCoinUI(int countCoin)
+    public void SetCountCoinUI(int countGold)
     {   
-        textCoin.text = countCoin.ToString();
-        //textCoin.text=GlobalControl.Instantiate.coins.ToString();
-        //SaveUI();        
+        textGold.text = countGold.ToString();
+          
     }
-    public void SetCountDiamondUI(int countDiamond)
+    public void SetCountDiamondUI(int countFood)
     {   
-        textDiamond.text = countDiamond.ToString();
+        textFood.text = countFood.ToString();
 
     }
-    public void SetCountSilverUI(int countSilver)
+    public void SetCountSilverUI(int countWeapon)
     {
-        textSilver.text = countSilver.ToString();
+        textWeapon.text = countWeapon.ToString();
     }
     public void PauseOn()
     {

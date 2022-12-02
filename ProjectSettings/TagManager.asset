@@ -8,6 +8,9 @@ TagManager:
   - CheckPoint
   - Gold
   - Spices
+  - Weapon
+  - Food
+  - Walk
   layers:
   - Default
   - TransparentFX

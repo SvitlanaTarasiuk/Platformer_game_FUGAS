@@ -9,8 +9,8 @@ public class CameraController : MonoBehaviour
     Vector3 deltaPosCam;                                //зміщення
     Vector3 target;                             //ціль
     //private float pointX2 = -4f;
-    [SerializeField] private float pointX1 = 18f;
-    [SerializeField] private float pointY = -0.6f;
+    [SerializeField] private float pointX1 = 40f;
+    [SerializeField] private float pointY = -4f;
 
     //void Start()
     //public void InitCam(Transform playerTransform)

@@ -6,7 +6,7 @@ public class ButtonAndroid : MonoBehaviour
 
     void Start()
     {
-        hero = SingletoneHero._singletoneHero.GetComponent<Hero>();
+       // hero = SingletoneHero._singletoneHero.GetComponent<Hero>();
     }
 
     public void LeftRunDown()
