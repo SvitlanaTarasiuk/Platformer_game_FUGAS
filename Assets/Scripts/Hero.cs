@@ -8,7 +8,9 @@ public class Hero : MonoBehaviour
     [SerializeField] private GameUI gameUI;
     //[SerializeField] private Rigidbody2D maceWeapon;
     [SerializeField] private Color colorDamage;
-
+    [SerializeField] private Transform groundPoint;
+    [SerializeField] private Transform startPoint;
+    [SerializeField] private Transform checkPoint;
     [SerializeField] private bool isMobileController = false;
     private bool isController = true;
     public float move;
@@ -16,7 +18,7 @@ public class Hero : MonoBehaviour
     private bool isRigth = true;
     private bool isGrounded = false;
     public int gold = 0;
-    public int life = 5;
+    public int life = 3;
     public int food = 0;
     public int weapon = 0;
     private Rigidbody2D rb;
@@ -35,9 +37,11 @@ public class Hero : MonoBehaviour
     {
         print("AwakeHero");
         rb = GetComponent<Rigidbody2D>();
-        sprite = GetComponentInChildren<SpriteRenderer>();
+        sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-       //SceneManager.sceneLoaded += LevelLoaded;//Sing            //підписка на подію завантаження сцени    
+        //sprite = GetComponentInChildren<SpriteRenderer>();
+        //anim = GetComponentInChildren<Animator>();
+        //SceneManager.sceneLoaded += LevelLoaded;//Sing            //підписка на подію завантаження сцени    
     }
 
     void Start()
@@ -64,9 +68,9 @@ public class Hero : MonoBehaviour
      void SetValueInUI()//Sing
     {
         print("SetValueInUI");
-        gameUI.SetCountCoinUI(gold);
-        gameUI.SetCountDiamondUI(food);
-        gameUI.SetCountSilverUI(weapon);
+        gameUI.SetCountGoldUI(gold);
+        gameUI.SetCountFoodUI(food);
+        gameUI.SetCountWeaponUI(weapon);
         gameUI.SetCountLifeUI(life);
 
     }
@@ -110,7 +114,6 @@ public class Hero : MonoBehaviour
     {
         CheckGround();
     }
-
     void Update()
     {
         // if (Time.timeScale >= 1)
@@ -132,7 +135,7 @@ public class Hero : MonoBehaviour
         //Vector3 dir = transform.right * move;
         //ransform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
 
-        //anim.SetFloat("speedX", Mathf.Abs(move));
+        anim.SetFloat("SpeedX", Mathf.Abs(move));
         Flip(move);
     }
     public void Jump()
@@ -140,6 +143,8 @@ public class Hero : MonoBehaviour
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            anim.SetFloat("SpeedY",Mathf.Abs(rb.velocity.y));
+            anim.SetBool("isGround",isGrounded);
         }
     }
     public void JumpMobile()
@@ -147,13 +152,16 @@ public class Hero : MonoBehaviour
         if (isGrounded)
         {
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
+            anim.SetFloat("SpeedY", Mathf.Abs(rb.velocity.y));
+            anim.SetBool("isGround", isGrounded);
         }
     }
 
     private void CheckGround()
     {
-        Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position + Vector3.down, 0.3f);
-        isGrounded = collider.Length > 1;
+        isGrounded = Physics2D.OverlapCircleAll(groundPoint.position, 0.3f).Length > 1;
+        //Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position + Vector3.down, 2f);
+        //isGrounded = collider.Length > 1;
     }
     private void Flip(float move)
     {
@@ -174,7 +182,7 @@ public class Hero : MonoBehaviour
         {
             gold += 100;
             SavePlayer();
-            gameUI.SetCountCoinUI(gold);
+            gameUI.SetCountGoldUI(gold);
             //gameUI.SetCountCoinUI();
             Destroy(collision.gameObject);
         }
@@ -182,7 +190,7 @@ public class Hero : MonoBehaviour
         {
             food += 1;
             SavePlayer();
-            gameUI.SetCountSilverUI(food);
+            gameUI.SetCountFoodUI(food);
             Destroy(collision.gameObject);
         }
         if (collision.tag == "Heart")
@@ -196,16 +204,16 @@ public class Hero : MonoBehaviour
         {
             weapon += 5;
             SavePlayer();
-            gameUI.SetCountDiamondUI(weapon);
+            gameUI.SetCountWeaponUI(weapon);
             Destroy(collision.gameObject);
         }
-        if (collision.tag == "Walk")
+        /*if (collision.tag == "Walk")
         {
             Damage();
             sprite.color = colorDamage;
             Invoke("ResetMaterial", 0.5f);
-        }
-       if (collision.tag == "Spices")
+        }*/
+       if (collision.tag == "Spices,Fire")
         {
             Damage();
             sprite.color = colorDamage;
@@ -237,6 +245,12 @@ public class Hero : MonoBehaviour
             sprite.color = colorDamage;
             Invoke("ResetMaterial", 0.5f);
         }
+        if (collision.transform.tag == "Prop")
+        {
+            Damage();
+            sprite.color = colorDamage;
+            Invoke("ResetMaterial", 0.5f);
+        }
     }
 
     /*private void OnCollisionExit2D(Collision2D collision)
@@ -254,7 +268,7 @@ public class Hero : MonoBehaviour
         {
             weapon--;
             SavePlayer();
-            gameUI.SetCountSilverUI(weapon);
+            gameUI.SetCountWeaponUI(weapon);
            // anim......
             //Rigidbody2D tempWeapon = Instantiate(maceWeapon, transform.position, Quaternion.identity);
             //tempWeapon.AddForce(new Vector2(isRigth ? 300 : -300, 0));
@@ -275,13 +289,25 @@ public class Hero : MonoBehaviour
     {
         sprite.color = Color.white;
     }
+    private void Restart()
+    {
+        if (transform.position.x < checkPoint.position.x)
+        {
+            transform.position = startPoint.position;
+        }
 
+        else if (transform.position.x > checkPoint.position.x)
+        {
+            transform.position = checkPoint.position;
+        }
+    }
     private void Damage()
     {
         print("life-1");
         life -= 1;
         SavePlayer();
         gameUI.RemuveHeart();
+        Restart();
 
         if (life == 0)
         {

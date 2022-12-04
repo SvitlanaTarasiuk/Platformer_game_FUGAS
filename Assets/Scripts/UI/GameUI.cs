@@ -14,25 +14,17 @@ public class GameUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textFood;
     [SerializeField] private TextMeshProUGUI textWeapon;
     [SerializeField] private int idLevel;
-    private int heart = 5;
+    private int heart = 3;
 
    void Start()
     {
         print("StartUI");
         heart = GlobalControl.Instantiate.heart;
-        //textCoin.text = GlobalControl.Instantiate.textCoint.text;
-        //textDiamond.text = GlobalControl.Instantiate.textDiamond.text;
-        //textSilver.text = GlobalControl.Instantiate.textSilver.text;
-
-        //objHearts = GlobalControl.Instantiate.objHearts;
+   
     }
     public void SaveUI()
     {
         GlobalControl.Instantiate.heart = heart;
-       //GlobalControl.Instantiate.textCoint.text = textCoin.text;
-       // GlobalControl.Instantiate.textDiamond.text = textDiamond.text;
-        //GlobalControl.Instantiate.textSilver.text = textSilver.text;
-        //GlobalControl.Instantiate.objHearts = objHearts;
 
     }
     public void AddHeart()
@@ -51,7 +43,7 @@ public class GameUI : MonoBehaviour
     }
     void UpdateHeart()
     {
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < 3; i++)
         {
             if (heart > i)
             {
@@ -70,17 +62,17 @@ public class GameUI : MonoBehaviour
         heart = life;
         UpdateHeart();
     }
-    public void SetCountCoinUI(int countGold)
+    public void SetCountGoldUI(int countGold)
     {   
         textGold.text = countGold.ToString();
           
     }
-    public void SetCountDiamondUI(int countFood)
+    public void SetCountFoodUI(int countFood)
     {   
         textFood.text = countFood.ToString();
 
     }
-    public void SetCountSilverUI(int countWeapon)
+    public void SetCountWeaponUI(int countWeapon)
     {
         textWeapon.text = countWeapon.ToString();
     }

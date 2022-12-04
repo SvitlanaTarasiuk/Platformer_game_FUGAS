@@ -9,32 +9,35 @@ public class Walk: MonoBehaviour
     [SerializeField] private Transform point2;
     private int lifeWalk = 2;
     private SpriteRenderer sprRend;
+    private Rigidbody2D rb;
     private float speed = 3f;
     private bool moveingRigth = true;
     
     void Start()
     {
         sprRend = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
-        if (transform.position.x > point2.position.x)
-        {
-            moveingRigth = false;
-        }
-        else if (transform.position.x < point1.position.x)
-        {
-            moveingRigth = true;
-        }
         if (moveingRigth)
         {
-            transform.position = new Vector2(transform.position.x + speed * Time.deltaTime, transform.position.y);
-            sprRend.flipX = false;
+            if (transform.position.x > point2.position.x)
+            {
+                moveingRigth = false;
+                transform.position = new Vector2(transform.position.x + speed * Time.deltaTime, transform.position.y);
+                sprRend.flipX = true;
+
+            }
         }
         else
         {
-            transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
-            sprRend.flipX = true;
+            if (transform.position.x < point1.position.x)
+            {
+                moveingRigth = true;
+                transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
+                sprRend.flipX = false;
+            }
         }
 
     }

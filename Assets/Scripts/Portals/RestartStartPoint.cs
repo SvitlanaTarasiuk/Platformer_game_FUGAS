@@ -10,9 +10,14 @@ public class RestartStartPoint : MonoBehaviour
         if (collision.tag == "Player")
         {
             if (collision.transform.position.x < checkPoint.position.x)
-            collision.transform.position = startPoint.position;
-            else if(collision.transform.position.x < checkPoint.position.x)
-            collision.transform.position = checkPoint.position;
+            {
+                collision.transform.position = startPoint.position;
+            }
+
+            else if (collision.transform.position.x > checkPoint.position.x)
+            {
+                collision.transform.position = checkPoint.position;
+            }
         }
     }
 }

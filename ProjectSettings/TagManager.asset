@@ -11,6 +11,10 @@ TagManager:
   - Weapon
   - Food
   - Walk
+  - Heart
+  - Prop
+  - RestartPoint
+  - Fire
   layers:
   - Default
   - TransparentFX
