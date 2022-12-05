@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2523590629850367814}
   - component: {fileID: 1400122029207621706}
   - component: {fileID: 5644901284899741492}
-  - component: {fileID: 7226112211496799942}
   m_Layer: 0
   m_Name: Pad_Spices
   m_TagString: Spices
@@ -96,38 +95,19 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 1
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.24985513}
+  m_Offset: {x: 0.007669449, y: 0.0185671}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.195, y: 1.715}
+    oldSize: {x: 5.5933332, y: 2.2866666}
     newSize: {x: 8.39, y: 3.43}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.7407184, y: 0.4884383}
+  m_Size: {x: 4.4002724, y: 1.0252829}
   m_EdgeRadius: 0
---- !u!251 &7226112211496799942
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4755540083383952189}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RotationalOffset: 0
-  m_UseOneWay: 1
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1

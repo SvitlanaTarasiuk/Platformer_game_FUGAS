@@ -16,6 +16,8 @@ TagManager:
   - RestartPoint
   - Fire
   - SpikeWalk
+  - BlusterCount
+  - Bluster
   layers:
   - Default
   - TransparentFX
