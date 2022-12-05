@@ -15,6 +15,7 @@ TagManager:
   - Prop
   - RestartPoint
   - Fire
+  - SpikeWalk
   layers:
   - Default
   - TransparentFX

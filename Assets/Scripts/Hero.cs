@@ -143,8 +143,7 @@ public class Hero : MonoBehaviour
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-            anim.SetFloat("SpeedY",Mathf.Abs(rb.velocity.y));
-            anim.SetBool("isGround",isGrounded);
+            anim.SetFloat("SpeedY",rb.velocity.y);
         }
     }
     public void JumpMobile()
@@ -153,13 +152,14 @@ public class Hero : MonoBehaviour
         {
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             anim.SetFloat("SpeedY", Mathf.Abs(rb.velocity.y));
-            anim.SetBool("isGround", isGrounded);
+            //anim.SetBool("isGround", isGrounded);
         }
     }
 
     private void CheckGround()
     {
-        isGrounded = Physics2D.OverlapCircleAll(groundPoint.position, 0.3f).Length > 1;
+        isGrounded = Physics2D.OverlapCircleAll(groundPoint.position, 0.5f).Length > 1;
+        anim.SetBool("isGround",isGrounded);
         //Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position + Vector3.down, 2f);
         //isGrounded = collider.Length > 1;
     }
@@ -214,12 +214,13 @@ public class Hero : MonoBehaviour
             Invoke("ResetMaterial", 0.5f);
         }*/
        if (collision.tag == "Spices,Fire")
+
         {
             Damage();
             sprite.color = colorDamage;
             Invoke("ResetMaterial", 0.5f);
         }
-        if (collision.tag == "RestartStartPoint")
+        if (collision.tag == "RestartPoint")
         {
             Damage();
         }
@@ -239,7 +240,7 @@ public class Hero : MonoBehaviour
         {
             transform.parent = collision.transform;
         }*/
-        if (collision.transform.tag == "Walk")
+        if (collision.transform.tag == "SpikeWalk")
         {
             Damage();
             sprite.color = colorDamage;
