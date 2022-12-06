@@ -1456,6 +1456,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: flyMan
       objectReference: {fileID: 0}
+    - target: {fileID: 8864985233843248720, guid: 402b764f8e1c5ee4eb32d4152a341953, type: 3}
+      propertyPath: m_TagString
+      value: SpikeWalk
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 402b764f8e1c5ee4eb32d4152a341953, type: 3}
 --- !u!4 &500074392 stripped
@@ -3176,6 +3180,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1144170617}
     - target: {fileID: 2859685783209167900, guid: 96cf0285a72b07742b1f9b98d846f6f5, type: 3}
+      propertyPath: textBluster
+      value: 
+      objectReference: {fileID: 1144170613}
+    - target: {fileID: 2859685783209167900, guid: 96cf0285a72b07742b1f9b98d846f6f5, type: 3}
       propertyPath: panelSetting
       value: 
       objectReference: {fileID: 1144170616}
@@ -4883,6 +4891,10 @@ PrefabInstance:
     - target: {fileID: 126366478309161857, guid: acaac94816ceec349a9a65c12b8ce4ea, type: 3}
       propertyPath: m_Name
       value: Flora2_43
+      objectReference: {fileID: 0}
+    - target: {fileID: 126366478309161857, guid: acaac94816ceec349a9a65c12b8ce4ea, type: 3}
+      propertyPath: m_TagString
+      value: Prop
       objectReference: {fileID: 0}
     - target: {fileID: 6505451550130041140, guid: acaac94816ceec349a9a65c12b8ce4ea, type: 3}
       propertyPath: m_RootOrder

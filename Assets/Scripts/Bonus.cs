@@ -5,12 +5,12 @@ public class Bonus: MonoBehaviour
     public GameObject cube;
     public GameObject objectBonus;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {        
         if (collision.gameObject.tag == "Player")
         {
             NewObject();
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 

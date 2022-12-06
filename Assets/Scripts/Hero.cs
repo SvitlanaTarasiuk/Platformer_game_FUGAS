@@ -6,7 +6,7 @@ public class Hero : MonoBehaviour
     [SerializeField] private float speed = 3f;
     [SerializeField] private float jumpForce = 15f;
     [SerializeField] private GameUI gameUI;
-    //[SerializeField] private Rigidbody2D maceWeapon;
+    [SerializeField] private Rigidbody2D bluster;
     [SerializeField] private Color colorDamage;
     [SerializeField] private Transform groundPoint;
     [SerializeField] private Transform startPoint;
@@ -20,7 +20,7 @@ public class Hero : MonoBehaviour
     public int gold = 0;
     public int life = 3;
     public int food = 0;
-    public int weapon = 0;
+    public int blusterCount = 0;
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private Animator anim;
@@ -31,7 +31,7 @@ public class Hero : MonoBehaviour
         get => key;
         set => key = value;
     }*/
-    
+
 
     void Awake()
     {
@@ -47,39 +47,38 @@ public class Hero : MonoBehaviour
     void Start()
     {
         print("StartHero");
+        GlobalControl.Instance.SaveScene();
 
-        gold = GlobalControl.Instantiate.gold;
-        life = GlobalControl.Instantiate.life;
-        food = GlobalControl.Instantiate.food;
-        weapon = GlobalControl.Instantiate.weapon;
+        gold = GlobalControl.Instance.gold;
+        life = GlobalControl.Instance.life;
+        food = GlobalControl.Instance.food;
+        blusterCount = GlobalControl.Instance.blusterCount;
         SetValueInUI();
-        //gameUI = GlobalControl.Instantiate.gameUI;
     }
 
     public void SavePlayer()
     {
-        GlobalControl.Instantiate.gold = gold;
-        GlobalControl.Instantiate.life = life;
-        GlobalControl.Instantiate.food = food;
-        GlobalControl.Instantiate.weapon = weapon;
-        //GlobalControl.Instantiate.gameUI = gameUI;
+        GlobalControl.Instance.gold = gold;
+        GlobalControl.Instance.life = life;
+        GlobalControl.Instance.food = food;
+        GlobalControl.Instance.blusterCount = blusterCount;
     }
 
-     void SetValueInUI()//Sing
+    void SetValueInUI()
     {
         print("SetValueInUI");
         gameUI.SetCountGoldUI(gold);
         gameUI.SetCountFoodUI(food);
-        gameUI.SetCountWeaponUI(weapon);
+        gameUI.SetCountBlusterUI(blusterCount);
         gameUI.SetCountLifeUI(life);
 
     }
-   /* private void LevelLoaded(Scene scene, LoadSceneMode mode)
-    {
-        print("LevelLoaded");
-        SetValueInUI();
-        //ConnectUI();
-    }*/
+    /* private void LevelLoaded(Scene scene, LoadSceneMode mode)
+     {
+         print("LevelLoaded");
+         SetValueInUI();
+         //ConnectUI();
+     }*/
 
     /*void ConnectUI()
     {
@@ -123,7 +122,7 @@ public class Hero : MonoBehaviour
             Attack();
             Run();
         }
-    }   
+    }
     public void Run()
     {
         if (!isMobileController)
@@ -143,7 +142,7 @@ public class Hero : MonoBehaviour
         if (isGrounded && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
-            anim.SetFloat("SpeedY",rb.velocity.y);
+            anim.SetFloat("SpeedY", rb.velocity.y);
         }
     }
     public void JumpMobile()
@@ -159,7 +158,7 @@ public class Hero : MonoBehaviour
     private void CheckGround()
     {
         isGrounded = Physics2D.OverlapCircleAll(groundPoint.position, 0.5f).Length > 1;
-        anim.SetBool("isGround",isGrounded);
+        anim.SetBool("isGround", isGrounded);
         //Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position + Vector3.down, 2f);
         //isGrounded = collider.Length > 1;
     }
@@ -183,7 +182,7 @@ public class Hero : MonoBehaviour
             gold += 100;
             SavePlayer();
             gameUI.SetCountGoldUI(gold);
-            //gameUI.SetCountCoinUI();
+            PlayerPrefs.SetInt("Gold", gold);
             Destroy(collision.gameObject);
         }
         if (collision.tag == "Food")
@@ -191,20 +190,23 @@ public class Hero : MonoBehaviour
             food += 1;
             SavePlayer();
             gameUI.SetCountFoodUI(food);
+            PlayerPrefs.SetInt("Food", food);
             Destroy(collision.gameObject);
         }
-        if (collision.tag == "Heart")
+        if (collision.tag == "Heart" && life < 3)
         {
             life += 1;
             SavePlayer();
             gameUI.AddHeart();
+            PlayerPrefs.SetInt("Life", life);
             Destroy(collision.gameObject);
         }
-        if (collision.tag == "Weapon")
+        if (collision.tag == "BlusterCount")
         {
-            weapon += 5;
+            blusterCount += 5;
             SavePlayer();
-            gameUI.SetCountWeaponUI(weapon);
+            gameUI.SetCountBlusterUI(blusterCount);
+            PlayerPrefs.SetInt("BlusterCount", blusterCount);
             Destroy(collision.gameObject);
         }
         /*if (collision.tag == "Walk")
@@ -213,8 +215,13 @@ public class Hero : MonoBehaviour
             sprite.color = colorDamage;
             Invoke("ResetMaterial", 0.5f);
         }*/
-       if (collision.tag == "Spices,Fire")
-
+        if (collision.tag == "Spices")
+        {
+            Damage();
+            sprite.color = colorDamage;
+            Invoke("ResetMaterial", 0.5f);
+        }
+        if (collision.tag == "Fire")
         {
             Damage();
             sprite.color = colorDamage;
@@ -252,6 +259,12 @@ public class Hero : MonoBehaviour
             sprite.color = colorDamage;
             Invoke("ResetMaterial", 0.5f);
         }
+        if (collision.transform.tag == "SpicesUP")
+        {
+            Damage();
+            sprite.color = colorDamage;
+            Invoke("ResetMaterial", 0.5f);
+        }
     }
 
     /*private void OnCollisionExit2D(Collision2D collision)
@@ -264,22 +277,30 @@ public class Hero : MonoBehaviour
 
     public void Attack(bool isAttack = false)
     {
-        if (isAttack || Input.GetKeyDown(KeyCode.Return) && weapon > 0)
+        if (isAttack || Input.GetKeyDown(KeyCode.Return) && blusterCount > 0)
+
         //if (Input.GetKeyDown(KeyCode.Return) && silver > 0)
         {
-            weapon--;
+            blusterCount--;
             SavePlayer();
-            gameUI.SetCountWeaponUI(weapon);
-           // anim......
-            //Rigidbody2D tempWeapon = Instantiate(maceWeapon, transform.position, Quaternion.identity);
-            //tempWeapon.AddForce(new Vector2(isRigth ? 300 : -300, 0));
-           /* if (!isRigth)
+            gameUI.SetCountBlusterUI(blusterCount);
+            PlayerPrefs.SetInt("BlusterCount", blusterCount);
+
+            Rigidbody2D tempBluster = Instantiate(bluster, transform.position, Quaternion.identity);
+            tempBluster.AddForce(new Vector2(isRigth ? 300 : -300, 0));
+            anim.SetBool("isAttack", true);
+
+            if (!isRigth)
             {
-                SpriteRenderer srSilver = tempWeapon.GetComponent<SpriteRenderer>();
-                srSilver.flipX = true;
-                srSilver.flipY = true;
-            }*/
+                SpriteRenderer srBluster = tempBluster.GetComponent<SpriteRenderer>();
+                srBluster.flipX = true;
+                srBluster.flipY = true;
+            }
         }
+    }
+    public void AttackToogle()
+    {
+        anim.SetBool("isAttack", false);
     }
     public void AttackMomile()
     {
@@ -308,6 +329,7 @@ public class Hero : MonoBehaviour
         life -= 1;
         SavePlayer();
         gameUI.RemuveHeart();
+        PlayerPrefs.SetInt("Life", life);
         Restart();
 
         if (life == 0)

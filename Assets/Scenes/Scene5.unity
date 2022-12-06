@@ -199,7 +199,7 @@ GameObject:
   - component: {fileID: 67202581}
   m_Layer: 0
   m_Name: PadUpDown (2)
-  m_TagString: Untagged
+  m_TagString: Spices
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1003,7 +1003,7 @@ GameObject:
   - component: {fileID: 419517191}
   m_Layer: 0
   m_Name: PadUpDown
-  m_TagString: Untagged
+  m_TagString: Spices
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2642,6 +2642,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1512220056}
     - target: {fileID: 2859685783209167900, guid: 96cf0285a72b07742b1f9b98d846f6f5, type: 3}
+      propertyPath: textBluster
+      value: 
+      objectReference: {fileID: 1318310832}
+    - target: {fileID: 2859685783209167900, guid: 96cf0285a72b07742b1f9b98d846f6f5, type: 3}
       propertyPath: panelSetting
       value: 
       objectReference: {fileID: 1286446873}
@@ -2682,7 +2686,7 @@ GameObject:
   - component: {fileID: 979561104}
   m_Layer: 0
   m_Name: bunny1_stand
-  m_TagString: Untagged
+  m_TagString: SpikeWalk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4182,7 +4186,7 @@ GameObject:
   - component: {fileID: 1742156988}
   m_Layer: 0
   m_Name: PadUpDown (1)
-  m_TagString: Untagged
+  m_TagString: Spices
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

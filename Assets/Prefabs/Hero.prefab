@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 305311667467121305}
   - component: {fileID: 305311667467121304}
   - component: {fileID: 305311667467121302}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -104,6 +104,7 @@ MonoBehaviour:
   speed: 5
   jumpForce: 14
   gameUI: {fileID: 0}
+  bluster: {fileID: 0}
   colorDamage: {r: 0.9528302, g: 0.4449537, b: 0.4449537, a: 1}
   groundPoint: {fileID: 305311668808763713}
   startPoint: {fileID: 0}
@@ -113,7 +114,7 @@ MonoBehaviour:
   gold: 0
   life: 3
   food: 0
-  weapon: 0
+  blusterCount: 0
 --- !u!70 &305311667467121305
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -123,7 +124,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 305311667467121308}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cd6aa2c64b8fa4c99b1111f7462ba77c, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -180,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 305311668808763713}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundPoint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}

@@ -9,8 +9,7 @@ public class Portal : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
-        {
-            
+        {     
             SceneManager.LoadScene(idNextLevel);
             //Hero heroPlayer = collision.GetComponent<Hero>();
             /*if (heroPlayer.Key == keyForNextLevel)

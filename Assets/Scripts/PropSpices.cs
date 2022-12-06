@@ -12,10 +12,10 @@ public class PropSpices : MonoBehaviour
     {
         sprRend = GetComponent<SpriteRenderer>();
     }
-    private void OnTrigerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.tag == "Player")
+        if (collision.transform.tag == "Bluster")
         {
             lifeProp--;
             sprRend.color = colorDamage;
