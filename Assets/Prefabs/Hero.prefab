@@ -103,8 +103,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   jumpForce: 14
-  gameUI: {fileID: 0}
-  bluster: {fileID: 0}
+  gameUI: {fileID: 2859685783209167900, guid: 96cf0285a72b07742b1f9b98d846f6f5, type: 3}
+  bluster: {fileID: 6131839464944059509, guid: 21676434f943f9941a8ff2f39b98dd58, type: 3}
   colorDamage: {r: 0.9528302, g: 0.4449537, b: 0.4449537, a: 1}
   groundPoint: {fileID: 305311668808763713}
   startPoint: {fileID: 0}

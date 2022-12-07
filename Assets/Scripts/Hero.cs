@@ -25,14 +25,6 @@ public class Hero : MonoBehaviour
     private SpriteRenderer sprite;
     private Animator anim;
 
-
-    /*public int Key
-    {
-        get => key;
-        set => key = value;
-    }*/
-
-
     void Awake()
     {
         print("AwakeHero");
@@ -209,12 +201,7 @@ public class Hero : MonoBehaviour
             PlayerPrefs.SetInt("BlusterCount", blusterCount);
             Destroy(collision.gameObject);
         }
-        /*if (collision.tag == "Walk")
-        {
-            Damage();
-            sprite.color = colorDamage;
-            Invoke("ResetMaterial", 0.5f);
-        }*/
+
         if (collision.tag == "Spices")
         {
             Damage();

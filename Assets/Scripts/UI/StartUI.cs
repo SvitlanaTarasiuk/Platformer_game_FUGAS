@@ -4,12 +4,26 @@ using UnityEngine.SceneManagement;
 public class StartUI : MonoBehaviour
 {
 
-    public void NewGame()
+    public void NewGamePause()
+    {
+        print("NewGame");
+        SceneManager.LoadScene(1);
+        GlobalControl.Instance.ResetData();
+        Time.timeScale = 1;
+    }
+   public void StartGame()
     {
         print("StartGame");
-        int loadScene = GlobalControl.Instance.GetLastSavedScene();
-        SceneManager.LoadScene(loadScene);      
-    }    
+        SceneManager.LoadScene(1);
+        GlobalControl.Instance.ResetData();
+    }
+    public void Continue()
+    {
+        print("Continue");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+    }
+ 
     public void ExitGame()
     {
         Application.Quit();
@@ -22,18 +36,7 @@ public class StartUI : MonoBehaviour
        GlobalControl.Instance.ResetData();
        //SingletoneHero._singletoneHero.GetComponent<Hero>().NewStartParametr();
    }*/
-    public void Restart()
-    {
-        print("Restart");
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1;
-    }
-    public void Continue()
-    {
-        print("Restart");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        Time.timeScale = 1;
-    }
+
     public void Scene1()
     {
         SceneManager.LoadScene(1);
@@ -66,8 +69,18 @@ public class StartUI : MonoBehaviour
     }
     public void Menu()
     {
-        SceneManager.LoadScene(1);
-        //GlobalControl.Instance.ResetData();
-        //Time.timeScale = 1;
+        SceneManager.LoadScene(7);
+    }
+    public void Settings()
+    {
+        SceneManager.LoadScene(8);
+    }
+    public void Levels()
+    {
+        SceneManager.LoadScene(9);
+    }
+    public void Rekords()
+    {
+        SceneManager.LoadScene(10);
     }
 }

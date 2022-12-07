@@ -1,9 +1,12 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Zombie : MonoBehaviour
 {
     [SerializeField] private Color colorDamage;
-    private int liveZombie = 10;
+    [SerializeField] private Image imageHp;
+    private int live_hp = 10;
+    private int hp_Current;
     private SpriteRenderer sprRend;
     private float speed = 3f;
     private bool moveingRigth = true;
@@ -12,6 +15,7 @@ public class Zombie : MonoBehaviour
     {
         sprRend = GetComponent<SpriteRenderer>();
         explosion = Resources.Load("Explosion");
+        hp_Current = live_hp;
     }
     void Update()
     {
@@ -40,10 +44,11 @@ public class Zombie : MonoBehaviour
 
         if (collision.transform.tag == "Silver")
         {
-            liveZombie--;
+            hp_Current--;
+            imageHp.fillAmount = (float)hp_Current / live_hp;
             sprRend.color = colorDamage;
 
-            if (liveZombie <= 0)
+            if (hp_Current <= 0)
             {
                 Destroy(gameObject);
                 GameObject explosionRef = (GameObject)Instantiate(explosion);
