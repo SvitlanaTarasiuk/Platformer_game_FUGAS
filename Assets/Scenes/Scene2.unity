@@ -13069,6 +13069,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1904457931}
     - target: {fileID: 2859685783209167900, guid: 96cf0285a72b07742b1f9b98d846f6f5, type: 3}
+      propertyPath: panelPause
+      value: 
+      objectReference: {fileID: 1904457932}
+    - target: {fileID: 2859685783209167900, guid: 96cf0285a72b07742b1f9b98d846f6f5, type: 3}
       propertyPath: textWeapon
       value: 
       objectReference: {fileID: 1904457929}
@@ -14550,6 +14554,7 @@ GameObject:
   - component: {fileID: 1797686033}
   - component: {fileID: 1797686032}
   - component: {fileID: 1797686035}
+  - component: {fileID: 1797686036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -14635,7 +14640,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1797686031}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fb5cfb8a94622043bf069e607697e86, type: 3}
   m_Name: 
@@ -14644,6 +14649,21 @@ MonoBehaviour:
   player: {fileID: 525223210}
   pointX1: 70
   pointY: 0
+--- !u!114 &1797686036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1797686031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ce7d590e602408c8ee9d7b159ec190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damping: 5
+  offset: {x: 2, y: 1}
+  isLeft: 0
 --- !u!1 &1811229676
 GameObject:
   m_ObjectHideFlags: 0
