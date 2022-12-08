@@ -8,7 +8,7 @@ public class GameUI : MonoBehaviour
     [SerializeField] private GameObject[] objHearts;
     [SerializeField] private GameObject panelGameOver;
     [SerializeField] private GameObject panelTheEnd;
-    [SerializeField] private GameObject panelSetting;
+    [SerializeField] private GameObject panelPause;
 
     [SerializeField] private TextMeshProUGUI textGold;
     [SerializeField] private TextMeshProUGUI textFood;
@@ -20,13 +20,11 @@ public class GameUI : MonoBehaviour
     {
         print("StartUI");
         heart = GlobalControl.Instance.heart;
-
     }
 
     public void SaveUI()
     {
         GlobalControl.Instance.heart = heart;
-
     }
 
     public void AddHeart()
@@ -89,13 +87,13 @@ public class GameUI : MonoBehaviour
     public void PauseOn()
     {
         Time.timeScale = 0.00001f;
-        panelSetting.SetActive(true);
+        panelPause.SetActive(true);
     }
 
     public void PauseOff()
     {
         Time.timeScale = 1;
-        panelSetting.SetActive(false);
+        panelPause.SetActive(false);
     }
 
     public void GameOver()
@@ -110,12 +108,21 @@ public class GameUI : MonoBehaviour
 
         panelTheEnd.SetActive(true);
     }
+    public void NewGame()
+    {
+        print("StartGame");
+        SceneManager.LoadScene(1);
+        GlobalControl.Instance.ResetData();
+        Time.timeScale = 1;
+    }
     public void Restart()
     {
         print("Restart");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(sceneIndex);
         Time.timeScale = 1;
     }
+
     public void Menu()
     {
         SceneManager.LoadScene(7);

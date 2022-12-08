@@ -40,6 +40,7 @@ public class Hero : MonoBehaviour
     {
         print("StartHero");
         GlobalControl.Instance.SaveScene();
+        //GlobalControl.Instance.LoadAllData();
 
         gold = GlobalControl.Instance.gold;
         life = GlobalControl.Instance.life;
@@ -107,12 +108,14 @@ public class Hero : MonoBehaviour
     }
     void Update()
     {
-        // if (Time.timeScale >= 1)
-        if (isController)
+        if (Time.timeScale >= 1)
         {
-            Jump();
-            Attack();
-            Run();
+            if (isController)
+            {
+                Jump();
+                Attack();
+                Run();
+            }
         }
     }
     public void Run()
@@ -122,9 +125,6 @@ public class Hero : MonoBehaviour
             move = Input.GetAxis("Horizontal");
         }
         rb.velocity = new Vector3(move * speed, rb.velocity.y, 0);
-
-        //Vector3 dir = transform.right * move;
-        //ransform.position = Vector3.MoveTowards(transform.position, transform.position + dir, speed * Time.deltaTime);
 
         anim.SetFloat("SpeedX", Mathf.Abs(move));
         Flip(move);
@@ -143,7 +143,6 @@ public class Hero : MonoBehaviour
         {
             rb.AddForce(transform.up * jumpForce, ForceMode2D.Impulse);
             anim.SetFloat("SpeedY", Mathf.Abs(rb.velocity.y));
-            //anim.SetBool("isGround", isGrounded);
         }
     }
 
@@ -151,8 +150,6 @@ public class Hero : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircleAll(groundPoint.position, 0.5f).Length > 1;
         anim.SetBool("isGround", isGrounded);
-        //Collider2D[] collider = Physics2D.OverlapCircleAll(transform.position + Vector3.down, 2f);
-        //isGrounded = collider.Length > 1;
     }
     private void Flip(float move)
     {
@@ -224,6 +221,16 @@ public class Hero : MonoBehaviour
             Destroy(collision.gameObject);
         }*/
     }
+
+    /*public void SaveData()
+    {
+        SavePlayer();
+        PlayerPrefs.SetInt("Gold", gold);
+        PlayerPrefs.SetInt("Food", food);
+        PlayerPrefs.SetInt("Life", life);
+        PlayerPrefs.SetInt("BlusterCount", blusterCount);
+
+    }*/
     private void OnCollisionEnter2D(Collision2D collision)
     {
         /*if (collision.transform.tag == "Enemy")

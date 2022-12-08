@@ -27,15 +27,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene6.unity
     guid: ed6c1d4399a127e41a830b02fee9ca74
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/Scenes/Menu7.unity
     guid: f4bfbf1fc1cf84bc88e0402f321a8aa2
   - enabled: 1
-    path: Assets/Scenes/Settings.unity
+    path: Assets/Scenes/Settings8.unity
     guid: 44644b7038a087544a795067bce3b6e1
   - enabled: 1
-    path: Assets/Scenes/Levels.unity
+    path: Assets/Scenes/Levels9.unity
     guid: 13169b39a74e16a4fba1fc6980897e25
   - enabled: 1
-    path: Assets/Scenes/Rekords.unity
+    path: Assets/Scenes/Rekords10.unity
     guid: ca76e69188be73f40a6e5be708ac3dce
   m_configObjects: {}

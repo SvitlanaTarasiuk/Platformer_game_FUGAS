@@ -32,7 +32,7 @@ public class GlobalControl : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    private void LoadAllData()
+    public void LoadAllData()
     { 
         gold = PlayerPrefs.GetInt("Gold",0);
         life = PlayerPrefs.GetInt("Life", 3);
@@ -65,13 +65,3 @@ public class GlobalControl : MonoBehaviour
         return currentSceneIndex;
     }
 }
-
-
-//pub  lic void SavePlayer()
-//GlobalControl.Instantiate.coins = coins;
-//...
-//void Start(0
-//coins = GlobalControl.Instantiate.coins;
-//...
-//PlayerPrefs.SetInt("Gold", gold);
-//PlayerPrefs.GetInt("Gold",0);

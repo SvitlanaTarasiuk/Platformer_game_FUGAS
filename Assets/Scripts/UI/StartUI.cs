@@ -3,24 +3,18 @@ using UnityEngine.SceneManagement;
 
 public class StartUI : MonoBehaviour
 {
-
-    public void NewGamePause()
-    {
-        print("NewGame");
-        SceneManager.LoadScene(1);
-        GlobalControl.Instance.ResetData();
-        Time.timeScale = 1;
-    }
-   public void StartGame()
+   public void NewGame()
     {
         print("StartGame");
         SceneManager.LoadScene(1);
         GlobalControl.Instance.ResetData();
+        Time.timeScale = 1;
     }
     public void Continue()
     {
         print("Continue");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        int lvl = GlobalControl.Instance.GetLastSavedScene();
+        SceneManager.LoadScene(lvl);
         Time.timeScale = 1;
     }
  
@@ -28,15 +22,7 @@ public class StartUI : MonoBehaviour
     {
         Application.Quit();
     }
-    /*public void NewGame()
-   {
-       print("NewGame");
-       SceneManager.LoadScene(1);
-       Time.timeScale = 1;
-       GlobalControl.Instance.ResetData();
-       //SingletoneHero._singletoneHero.GetComponent<Hero>().NewStartParametr();
-   }*/
-
+  
     public void Scene1()
     {
         SceneManager.LoadScene(1);

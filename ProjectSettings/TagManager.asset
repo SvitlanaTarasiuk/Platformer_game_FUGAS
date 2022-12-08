@@ -19,6 +19,7 @@ TagManager:
   - BlusterCount
   - Bluster
   - SpicesUP
+  - FallPlatform
   layers:
   - Default
   - TransparentFX

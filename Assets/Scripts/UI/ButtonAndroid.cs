@@ -2,13 +2,8 @@ using UnityEngine;
 
 public class ButtonAndroid : MonoBehaviour
 {
-    private Hero hero;
-
-    void Start()
-    {
-       // hero = SingletoneHero._singletoneHero.GetComponent<Hero>();
-    }
-
+    [SerializeField] private Hero hero;
+    
     public void LeftRunDown()
     {
         hero.move = -1;

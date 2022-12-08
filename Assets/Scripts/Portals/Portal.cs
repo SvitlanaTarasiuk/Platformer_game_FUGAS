@@ -11,13 +11,7 @@ public class Portal : MonoBehaviour
         if (collision.tag == "Player")
         {     
             SceneManager.LoadScene(idNextLevel);
-            //Hero heroPlayer = collision.GetComponent<Hero>();
-            /*if (heroPlayer.Key == keyForNextLevel)
-            {
-                print("Portal");
-                heroPlayer.Key -= 1;
-                SceneManager.LoadScene(idNextLevel);
-            }*/
+            //collision.GetComponent<Hero>().SaveData();
         }
     }  
 }
