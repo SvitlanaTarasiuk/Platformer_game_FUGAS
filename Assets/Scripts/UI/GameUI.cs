@@ -122,7 +122,10 @@ public class GameUI : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
         Time.timeScale = 1;
     }
-
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
     public void Menu()
     {
         SceneManager.LoadScene(7);

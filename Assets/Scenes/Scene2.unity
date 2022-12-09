@@ -10524,7 +10524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7792157561638962560, guid: 4c32fc69a64b45d4e81d97ca825060e5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.77
+      value: 2.95
       objectReference: {fileID: 0}
     - target: {fileID: 7792157561638962560, guid: 4c32fc69a64b45d4e81d97ca825060e5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14661,13 +14661,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ce7d590e602408c8ee9d7b159ec190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damping: 5
+  damping: 1.5
   offset: {x: 2, y: 1}
   isLeft: 0
-  leftLimit: -10
-  rightLimit: 10
-  bottomLimit: 3
-  upperLimit: 0
+  leftLimit: -8
+  rightLimit: 75
+  bottomLimit: 0
+  upperLimit: 1
 --- !u!1 &1811229676
 GameObject:
   m_ObjectHideFlags: 0

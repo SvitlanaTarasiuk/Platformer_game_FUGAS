@@ -1593,6 +1593,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 871571857122179012, guid: e62d57bb61c8e4160ad5a513bac6bdc9, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: e21ea097544174dc4ba992e60ef8dd30, type: 3}
     - target: {fileID: 871571857122179013, guid: e62d57bb61c8e4160ad5a513bac6bdc9, type: 3}
       propertyPath: MusicButton
       value: 
@@ -1600,6 +1604,10 @@ PrefabInstance:
     - target: {fileID: 871571857122179014, guid: e62d57bb61c8e4160ad5a513bac6bdc9, type: 3}
       propertyPath: m_Name
       value: MusicController
+      objectReference: {fileID: 0}
+    - target: {fileID: 871571857122179014, guid: e62d57bb61c8e4160ad5a513bac6bdc9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e62d57bb61c8e4160ad5a513bac6bdc9, type: 3}

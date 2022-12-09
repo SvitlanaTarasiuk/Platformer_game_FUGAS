@@ -1149,6 +1149,7 @@ GameObject:
   - component: {fileID: 360622576}
   - component: {fileID: 360622575}
   - component: {fileID: 360622578}
+  - component: {fileID: 360622579}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1235,7 +1236,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 360622574}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fb5cfb8a94622043bf069e607697e86, type: 3}
   m_Name: 
@@ -1244,6 +1245,25 @@ MonoBehaviour:
   player: {fileID: 375981870}
   pointX1: 75
   pointY: 0
+--- !u!114 &360622579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360622574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ce7d590e602408c8ee9d7b159ec190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damping: 1.5
+  offset: {x: 2, y: 1}
+  isLeft: 0
+  leftLimit: -7
+  rightLimit: 80
+  bottomLimit: 0
+  upperLimit: 0.7
 --- !u!1001 &375981869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3063,7 +3083,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3602032720214723216, guid: 15b70dc2a66ed8a4aa31ff5eda7b9035, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -12.727112
+      value: -12.727142
       objectReference: {fileID: 0}
     - target: {fileID: 3602032720283136533, guid: 15b70dc2a66ed8a4aa31ff5eda7b9035, type: 3}
       propertyPath: m_Pivot.x
@@ -3155,11 +3175,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4814211317371036615, guid: 15b70dc2a66ed8a4aa31ff5eda7b9035, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -12.727112
+      value: -12.727142
       objectReference: {fileID: 0}
     - target: {fileID: 6325658938013227563, guid: 15b70dc2a66ed8a4aa31ff5eda7b9035, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -12.727112
+      value: -12.727142
       objectReference: {fileID: 0}
     - target: {fileID: 6727683416443497867, guid: 15b70dc2a66ed8a4aa31ff5eda7b9035, type: 3}
       propertyPath: m_IsActive

@@ -1075,6 +1075,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1231385093}
     m_Modifications:
+    - target: {fileID: 2260357392188751481, guid: 652202f1dfc45704ca945386a2c3c9b1, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5489214993746120263, guid: 652202f1dfc45704ca945386a2c3c9b1, type: 3}
       propertyPath: m_Name
       value: Pad_01_1 (28)
@@ -1172,6 +1176,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!251 &242839478
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242839473}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &248069488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,6 +1411,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1231385093}
     m_Modifications:
+    - target: {fileID: 2260357392188751481, guid: 652202f1dfc45704ca945386a2c3c9b1, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5489214993746120263, guid: 652202f1dfc45704ca945386a2c3c9b1, type: 3}
       propertyPath: m_Name
       value: Pad_01_1 (26)
@@ -1485,6 +1512,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!251 &340831346
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 340831341}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &371362460
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1846,6 +1892,7 @@ GameObject:
   - component: {fileID: 456118064}
   - component: {fileID: 456118063}
   - component: {fileID: 456118066}
+  - component: {fileID: 456118067}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1933,7 +1980,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456118062}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0fb5cfb8a94622043bf069e607697e86, type: 3}
   m_Name: 
@@ -1942,6 +1989,25 @@ MonoBehaviour:
   player: {fileID: 199184835}
   pointX1: 85
   pointY: -0.4
+--- !u!114 &456118067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456118062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87ce7d590e602408c8ee9d7b159ec190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damping: 1.5
+  offset: {x: 2, y: 1}
+  isLeft: 0
+  leftLimit: -7
+  rightLimit: 90
+  bottomLimit: 0
+  upperLimit: 0.6
 --- !u!1001 &510035039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2320,6 +2386,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1231385093}
     m_Modifications:
+    - target: {fileID: 2260357392188751481, guid: 652202f1dfc45704ca945386a2c3c9b1, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5489214993746120263, guid: 652202f1dfc45704ca945386a2c3c9b1, type: 3}
       propertyPath: m_Name
       value: Pad_01_1 (25)
@@ -2417,6 +2487,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!251 &613993245
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 613993240}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &635269343
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2846,6 +2935,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1231385093}
     m_Modifications:
+    - target: {fileID: 2260357392188751481, guid: 652202f1dfc45704ca945386a2c3c9b1, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5489214993746120263, guid: 652202f1dfc45704ca945386a2c3c9b1, type: 3}
       propertyPath: m_Name
       value: Pad_01_1 (29)
@@ -2943,6 +3036,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!251 &781438321
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 781438316}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &817599669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2950,6 +3062,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1231385093}
     m_Modifications:
+    - target: {fileID: 2260357392188751481, guid: 652202f1dfc45704ca945386a2c3c9b1, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5489214993746120263, guid: 652202f1dfc45704ca945386a2c3c9b1, type: 3}
       propertyPath: m_Name
       value: Pad_01_1 (27)
@@ -3047,6 +3163,25 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!251 &817599676
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 817599671}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1001 &834879047
 PrefabInstance:
   m_ObjectHideFlags: 0
