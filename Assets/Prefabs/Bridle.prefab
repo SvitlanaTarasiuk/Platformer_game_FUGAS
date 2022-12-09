@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8262699493866507308}
   m_Layer: 0
   m_Name: Bridge_01 (1)
-  m_TagString: Spices
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 5059538717371815355}
   m_Layer: 0
   m_Name: Bridge_01 (2)
-  m_TagString: Spices
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 2228515283893895428}
   m_Layer: 0
   m_Name: Bridle
-  m_TagString: Spices
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -410,7 +410,7 @@ GameObject:
   - component: {fileID: 4449663831190128359}
   m_Layer: 0
   m_Name: Bridge_01
-  m_TagString: Spices
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -603,7 +603,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.015468597, y: -0.07734349}
+  m_Offset: {x: -0.015468597, y: -0.15493432}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -614,5 +614,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.6003075, y: 0.485313}
+  m_Size: {x: 3.6003075, y: 0.33013135}
   m_EdgeRadius: 0
