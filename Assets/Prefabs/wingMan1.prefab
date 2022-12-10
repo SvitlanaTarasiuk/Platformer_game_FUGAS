@@ -135,6 +135,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d6361d389524023b04816b11bb2978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorDamage: {r: 0, g: 0, b: 0, a: 0}
+  colorDamage: {r: 0.9622642, g: 0.49384123, b: 0.8860979, a: 1}
   point1: {fileID: 0}
   point2: {fileID: 0}
