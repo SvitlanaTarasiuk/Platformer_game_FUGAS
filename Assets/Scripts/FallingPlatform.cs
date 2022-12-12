@@ -22,7 +22,7 @@ public class FallingPlatform : MonoBehaviour
     void FallPlatform()
     {
         rb.isKinematic = false;
-        Invoke("BackPlatform", 1f);
+        Invoke("BackPlatform", 5f);
     }
     void Update()
     {

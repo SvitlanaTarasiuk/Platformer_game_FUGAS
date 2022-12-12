@@ -4,14 +4,25 @@ using UnityEngine.SceneManagement;
 public class Portal : MonoBehaviour
 {
     [SerializeField] private int idNextLevel;
-    //private int keyForNextLevel = 1;
-
+    
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
-        {     
+        {
+            UnlockLevel();
             SceneManager.LoadScene(idNextLevel);
-            //collision.GetComponent<Hero>().SaveData();
+
+
         }
     }  
+    public void UnlockLevel()
+    {
+        int currentLevel = GlobalControl.Instance.GetLastSavedScene();//SceneManager.GetActiveScene().buildIndex;
+        print($"Portal,UnlockLevel{currentLevel}");
+        
+        if (currentLevel>=PlayerPrefs.GetInt("Levels"))
+        {
+            PlayerPrefs.SetInt("Levels", currentLevel + 1);
+        }
+    }
 }

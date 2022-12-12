@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5903062317898146924}
   - component: {fileID: 2484003334422658857}
   - component: {fileID: 4516831699472271237}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bunny
   m_TagString: SpikeWalk
   m_Icon: {fileID: 0}

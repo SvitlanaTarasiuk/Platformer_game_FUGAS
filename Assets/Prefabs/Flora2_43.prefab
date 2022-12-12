@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3118875653003206778}
   - component: {fileID: 6413411810769753162}
   - component: {fileID: 242691611941133213}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Flora2_43
   m_TagString: Untagged
   m_Icon: {fileID: 0}

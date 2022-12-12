@@ -10,14 +10,19 @@ public class Bonus: MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             NewObject();
-            //Destroy(gameObject);
+            
+        Destroy(gameObject);
         }
     }
 
-      void NewObject()
+    void NewObject()
     {
-        GameObject newobjectBonus = Instantiate(objectBonus);
-        newobjectBonus.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y+2.0f, 0);
+        
+            GameObject newobjectBonus = Instantiate(objectBonus);
+            newobjectBonus.transform.position = new Vector3(cube.transform.position.x, cube.transform.position.y + 2.0f, 0);
+        
+
     }
+
 }
 

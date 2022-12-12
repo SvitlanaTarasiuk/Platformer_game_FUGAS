@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7616068990166729879}
   - component: {fileID: 1072354212578558389}
   - component: {fileID: 5873547278960379089}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wingMan1
   m_TagString: SpikeWalk
   m_Icon: {fileID: 0}

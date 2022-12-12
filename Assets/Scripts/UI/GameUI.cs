@@ -118,8 +118,9 @@ public class GameUI : MonoBehaviour
     public void Restart()
     {
         print("Restart");
-        int sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int sceneIndex = GlobalControl.Instance.GetLastSavedScene();     //SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(sceneIndex);
+        GlobalControl.Instance.ResetData();
         Time.timeScale = 1;
     }
     public void ExitGame()

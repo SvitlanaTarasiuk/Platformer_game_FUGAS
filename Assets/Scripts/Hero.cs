@@ -66,42 +66,7 @@ public class Hero : MonoBehaviour
         gameUI.SetCountLifeUI(life);
 
     }
-    /* private void LevelLoaded(Scene scene, LoadSceneMode mode)
-     {
-         print("LevelLoaded");
-         SetValueInUI();
-         //ConnectUI();
-     }*/
-
-    /*void ConnectUI()
-    {
-        try
-        {
-            print($"{SingletoneHero._singletoneHero.transform}, {transform} try");
-
-            if (SingletoneHero._singletoneHero.transform == transform)
-            {
-                print("ConnectUI");
-                gameUI = FindObjectOfType<GameUI>();
-                SetValueInUI();
-            }
-        }
-        catch (MissingReferenceException e)
-        {
-            _ = e;
-           print($"{SingletoneHero._singletoneHero.transform}, {transform} - {e}");
-        }
-    }
-    public void NewStartParametr()
-    {
-        print("NewStartParametr");
-        coins = 0;
-        diamond = 0;
-        silver = 0;
-        life = 5;
-        key = 0;
-        SetValueInUI();
-    }*/
+  
     private void FixedUpdate()
     {
         CheckGround();
@@ -215,11 +180,7 @@ public class Hero : MonoBehaviour
         {
             Damage();
         }
-        /*if (collision.tag == "Key")
-        {
-            key += 1;
-            Destroy(collision.gameObject);
-        }*/
+       
     }
 
     /*public void SaveData()
@@ -233,11 +194,8 @@ public class Hero : MonoBehaviour
     }*/
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        /*if (collision.transform.tag == "Enemy")
-        {
-            Destroy(collision.gameObject);
-        }
-        if (collision.transform.tag == "Platform")
+        
+        /*if (collision.transform.tag == "Platform")
         {
             transform.parent = collision.transform;
         }*/
@@ -273,7 +231,6 @@ public class Hero : MonoBehaviour
     {
         if (isAttack || Input.GetKeyDown(KeyCode.Return) && blusterCount > 0)
 
-        //if (Input.GetKeyDown(KeyCode.Return) && silver > 0)
         {
             blusterCount--;
             SavePlayer();
@@ -282,7 +239,8 @@ public class Hero : MonoBehaviour
 
             Rigidbody2D tempBluster = Instantiate(bluster, transform.position, Quaternion.identity);
             tempBluster.AddForce(new Vector2(isRigth ? 300 : -300, 0));
-            anim.SetBool("isAttack", true);
+            //anim.SetBool("isAttack", true);
+            anim.SetTrigger("Attack");
 
             if (!isRigth)
             {
@@ -292,10 +250,10 @@ public class Hero : MonoBehaviour
             }
         }
     }
-    public void AttackToogle()
+    /*public void AttackToogle()
     {
         anim.SetBool("isAttack", false);
-    }
+    }*/
     public void AttackMomile()
     {
         Attack(true);

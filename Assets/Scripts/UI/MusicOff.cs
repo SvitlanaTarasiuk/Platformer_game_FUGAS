@@ -11,12 +11,12 @@ public class MusicOff : MonoBehaviour
     public bool isOn;
     //private float musicVolume=1;
 
-    /*void Start()
+    void Start()
     {
         isOn = true;
-        musicVolume = PlayerPrefs.GetFloat("music", 1f);
+        //musicVolume = PlayerPrefs.GetFloat("music", 1f);
         //slider.value = musicVolume;
-    }*/
+    }
     void Update()
     {
         if (PlayerPrefs.GetFloat("music")> 0)
@@ -46,7 +46,7 @@ public class MusicOff : MonoBehaviour
         {
             print("SetMusic_0");
             PlayerPrefs.SetFloat("music", 0);
-            //slider.value = 0;
+              //slider.value = 0;
             MusicButton.sprite = OffMusic;
             audioSrc.enabled = false;
         }
