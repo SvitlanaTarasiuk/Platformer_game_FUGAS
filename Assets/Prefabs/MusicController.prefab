@@ -43,7 +43,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 98b7a62b9155fc8409e7aeb055c90a9f, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -144,5 +144,6 @@ MonoBehaviour:
   OnMusic: {fileID: 21300000, guid: c568ce57187ef442094168cadd616b69, type: 3}
   OffMusic: {fileID: 21300000, guid: 00ed9d97b4c2b4682b72d43cfbb5e5c4, type: 3}
   audioSrc: {fileID: 871571857122179012}
-  MusicButton: {fileID: 0}
+  MusicButton: {fileID: 277935870104667894, guid: 9b154e66d3ce3c241a5c1e5245a96bc6, type: 3}
+  slider: {fileID: 2828450798585537079, guid: e8873da6c03d0f240998d924a31967be, type: 3}
   isOn: 1

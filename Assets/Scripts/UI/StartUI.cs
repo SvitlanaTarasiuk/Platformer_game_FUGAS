@@ -4,9 +4,12 @@ using UnityEngine.UI;
 
 public class StartUI : MonoBehaviour
 {
-    [SerializeField] private Button buttonContinue; 
-    
-   public void NewGame()
+    [SerializeField] private Button buttonContinue;
+    [SerializeField] private GameObject panelSettingsMusic;
+    [SerializeField] private GameObject panelMenu;
+    [SerializeField] private GameObject panelLevels;
+
+    public void NewGame()
     {     
         print("StartGame");
         SceneManager.LoadScene(1);
@@ -34,52 +37,27 @@ public class StartUI : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+
     }
   
-    //public void Scene1()
-    //{
-    //    SceneManager.LoadScene(1);
-    //    GlobalControl.Instance.ResetData();
-    //    Time.timeScale = 1;
-    //}
-    //public void Scene2()
-    //{
-    //    SceneManager.LoadScene(2);
-    //    GlobalControl.Instance.ResetData();
-    //    Time.timeScale = 1;
-    //}
-    //public void Scene3()
-    //{
-    //    SceneManager.LoadScene(3);
-    //    GlobalControl.Instance.ResetData();
-    //    Time.timeScale = 1;
-    //}
-    //public void Scene4()
-    //{
-    //    SceneManager.LoadScene(4);
-    //    GlobalControl.Instance.ResetData();
-    //    Time.timeScale = 1;
-    //}
-    //public void Scene5()
-    //{
-    //    SceneManager.LoadScene(5);
-    //    GlobalControl.Instance.ResetData();
-    //    Time.timeScale = 1;
-    //}
     public void Menu()
     {
-        SceneManager.LoadScene(7);
+        panelMenu.SetActive(true);
+        //SceneManager.LoadScene(7);
     }
     public void Settings()
     {
-        SceneManager.LoadScene(8);
+        panelSettingsMusic.SetActive(true);
+        //SceneManager.LoadScene(8);
     }
     public void Levels()
     {
-        SceneManager.LoadScene(9);
+        panelLevels.SetActive(true);
+        //SceneManager.LoadScene(9);
+
     }
-    public void Rekords()
-    {
-        SceneManager.LoadScene(10);
-    }
+    //public void Rekords()
+    //{
+    //    SceneManager.LoadScene(10);
+    //}
 }

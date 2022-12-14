@@ -9,6 +9,8 @@ public class GameUI : MonoBehaviour
     [SerializeField] private GameObject panelGameOver;
     [SerializeField] private GameObject panelTheEnd;
     [SerializeField] private GameObject panelPause;
+    [SerializeField] private GameObject panelSettingMusic;
+
 
     [SerializeField] private TextMeshProUGUI textGold;
     [SerializeField] private TextMeshProUGUI textFood;
@@ -105,7 +107,6 @@ public class GameUI : MonoBehaviour
     public void TheEnd()
     {
         print("TheEnd");
-
         panelTheEnd.SetActive(true);
     }
     public void NewGame()
@@ -129,6 +130,12 @@ public class GameUI : MonoBehaviour
     }
     public void Menu()
     {
-        SceneManager.LoadScene(7);
+
+        SceneManager.LoadScene(0);
+
+    }
+    public void Settings()
+    {
+        panelSettingMusic.SetActive(true);
     }
 }

@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEditor.SearchService;
+
 
 public class LevelManager : MonoBehaviour
 {
@@ -11,7 +9,9 @@ public class LevelManager : MonoBehaviour
     public Button[] buttonsLevel; 
     void Start()
     {
-        levelUnlock = PlayerPrefs.GetInt("Levels",1);
+        int saveLevel = GlobalControl.Instance.GetLastSavedScene();
+        PlayerPrefs.SetInt("Levels", saveLevel);
+        levelUnlock = PlayerPrefs.GetInt("Levels");
         print("Start LevelManager");
         print(levelUnlock);
         
@@ -28,7 +28,7 @@ public class LevelManager : MonoBehaviour
     public void LoadLevel(int levelIndex)
     {
         SceneManager.LoadScene(levelIndex);
-        GlobalControl.Instance.ResetData();
+        GlobalControl.Instance.ResetData();//скидання даних
         Time.timeScale = 1;
     }
 }
