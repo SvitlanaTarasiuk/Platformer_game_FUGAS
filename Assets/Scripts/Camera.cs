@@ -34,7 +34,11 @@ public class Camera : MonoBehaviour
     }
     private void Update()
     {
-        if (player)
+        CameraPosition();
+    }
+    void CameraPosition()
+    {
+         if (player)
         {
             int currentX = Mathf.RoundToInt(player.position.x);
             if (currentX > lastX)

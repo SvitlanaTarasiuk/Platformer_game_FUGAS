@@ -26,6 +26,10 @@ public class FallingPlatform : MonoBehaviour
     }
     void Update()
     {
+        MovePlatform();   
+    }
+    void MovePlatform()
+    {
         if (moveingBack == true)
         { 
             transform.position = Vector2.MoveTowards(transform.position, currentPosition, 20f - Time.deltaTime); 

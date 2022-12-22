@@ -8,7 +8,6 @@ public class StartUI : MonoBehaviour
     [SerializeField] private GameObject panelSettingsMusic;
     [SerializeField] private GameObject panelMenu;
     [SerializeField] private GameObject panelLevels;
-
     public void NewGame()
     {     
         print("StartGame");
@@ -19,7 +18,7 @@ public class StartUI : MonoBehaviour
     public void Continue()
     {
         print("Continue");
-        int lifeHero = PlayerPrefs.GetInt("Life");                                  //GlobalControl.Instance.life;
+        int lifeHero = PlayerPrefs.GetInt("Life");                 
         int lastScene = GlobalControl.Instance.GetLastSavedScene();
 
         if (lifeHero > 0)
@@ -36,14 +35,15 @@ public class StartUI : MonoBehaviour
  
     public void ExitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene(0);    //for Web Build
+        //Application.Quit();         //for Android or Windows Build
 
     }
   
     public void Menu()
     {
-        panelMenu.SetActive(true);
-        //SceneManager.LoadScene(7);
+        //panelMenu.SetActive(true);
+        SceneManager.LoadScene(7);
     }
     public void Settings()
     {

@@ -16,6 +16,10 @@ public class SpikeWalk: MonoBehaviour
     }
 
     void Update()
+    {        
+        MoveSpikeWalk();
+    }
+    void MoveSpikeWalk()
     {
         if (moveingRigth && transform.position.x > point2.position.x)
         {
@@ -35,7 +39,6 @@ public class SpikeWalk: MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);            
         }
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

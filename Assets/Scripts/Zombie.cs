@@ -7,6 +7,8 @@ public class Zombie : MonoBehaviour
     [SerializeField] private Image imageHp;
     public Animator animator;
     private SpriteRenderer sprRend;
+    private Rigidbody2D rgbd;
+    private Collider2D col;
     private Object explosion;
     //public Transform attackPoint;
    // public float attackRange = 0.5f;
@@ -18,16 +20,22 @@ public class Zombie : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         sprRend = GetComponent<SpriteRenderer>();
+        rgbd = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
         explosion = Resources.Load("Explosion");
         hp_Current = live_hp;
     }
     void Update()
     {
-        if (transform.position.x > 12f)
+        WalkZombie();
+    }
+    private void WalkZombie()
+    {
+        if (transform.position.x > 4f)
         {
             moveingRigth = false;
         }
-        else if (transform.position.x < -1f)
+        else if (transform.position.x < -5f)
         {
             moveingRigth = true;
         }
@@ -35,8 +43,8 @@ public class Zombie : MonoBehaviour
         {
             transform.position = new Vector2(transform.position.x + speed * Time.deltaTime, transform.position.y);
             sprRend.flipX = false;
-           
-        }       
+
+        }
         else
         {
             transform.position = new Vector2(transform.position.x - speed * Time.deltaTime, transform.position.y);
@@ -50,7 +58,7 @@ public class Zombie : MonoBehaviour
     //        return;
     //    Gizmos.DrawSphere(attackPoint.position,attackRange);
     //}
-    private void OnCollisionEnter2D(Collision2D collision)
+private void OnCollisionEnter2D(Collision2D collision)
     {
 
         if (collision.transform.tag == "Bluster")
@@ -81,10 +89,9 @@ public class Zombie : MonoBehaviour
         sprRend.color = Color.white;
     }
     void Die()
-    {
-       
-        Destroy(GetComponent<Rigidbody2D>());   
-        Destroy(GetComponent<Collider2D>());
+    {  
+        Destroy(rgbd);   
+        Destroy(col);
         this.enabled = true;
 
     }

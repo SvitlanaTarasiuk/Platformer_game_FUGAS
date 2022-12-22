@@ -124,14 +124,14 @@ public class GameUI : MonoBehaviour
         GlobalControl.Instance.ResetData();
         Time.timeScale = 1;
     }
-    public void ExitGame()
-    {
-        Application.Quit();
-    }
+    //public void ExitGame()
+    //{
+    //    Application.Quit();
+    //}
     public void Menu()
     {
 
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(7);
 
     }
     public void Settings()

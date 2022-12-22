@@ -20,6 +20,10 @@ public class MusicOff : MonoBehaviour
     }
     void Update()
     {
+        Music();
+    }
+    private void Music()
+    {
         if (PlayerPrefs.GetFloat("music")> 0)
         {
             MusicButton.sprite = OnMusic;

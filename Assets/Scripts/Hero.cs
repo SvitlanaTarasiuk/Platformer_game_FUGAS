@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Hero : MonoBehaviour
 {
@@ -140,7 +139,7 @@ public class Hero : MonoBehaviour
             gold += 10;
             SavePlayer();
             gameUI.SetCountGoldUI(gold);
-            PlayerPrefs.SetInt("Gold", gold);
+            PlayerPrefs.SetInt("Gold", gold);           
             audioSource.PlayOneShot(audioClip);
             Destroy(collision.gameObject);
         }

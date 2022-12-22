@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 305311667467121305}
   - component: {fileID: 305311667467121304}
   - component: {fileID: 305311667467121302}
-  - component: {fileID: 9019540678816661843}
+  - component: {fileID: 1624446534892333465}
   m_Layer: 7
   m_Name: Hero
   m_TagString: Player
@@ -174,7 +174,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!82 &9019540678816661843
+--- !u!82 &1624446534892333465
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,7 +184,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 958d462fcc63b9e479906fe0fdcc56a5, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
