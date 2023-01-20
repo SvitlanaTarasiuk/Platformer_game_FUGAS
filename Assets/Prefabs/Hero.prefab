@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 946ccab195fa448f2bc36f341dde1c12, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,20 +103,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
-  jumpForce: 14
+  jumpForce: 13
   gameUI: {fileID: 2859685783209167900, guid: 96cf0285a72b07742b1f9b98d846f6f5, type: 3}
   bluster: {fileID: 6131839464944059509, guid: 21676434f943f9941a8ff2f39b98dd58, type: 3}
   colorDamage: {r: 0.9528302, g: 0.4449537, b: 0.4449537, a: 1}
   groundPoint: {fileID: 305311668808763713}
   startPoint: {fileID: 0}
   checkPoint: {fileID: 0}
-  isMobileController: 0
+  isMobileController: 1
   move: 0
   gold: 0
   life: 3
   food: 0
   blusterCount: 0
-  audioClip: {fileID: 8300000, guid: 958d462fcc63b9e479906fe0fdcc56a5, type: 3}
 --- !u!70 &305311667467121305
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -181,7 +180,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305311667467121308}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 958d462fcc63b9e479906fe0fdcc56a5, type: 3}

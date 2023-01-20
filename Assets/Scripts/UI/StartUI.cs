@@ -35,8 +35,8 @@ public class StartUI : MonoBehaviour
  
     public void ExitGame()
     {
-        SceneManager.LoadScene(0);    //for Web Build
-        //Application.Quit();         //for Android or Windows Build
+        //SceneManager.LoadScene(0);    //for Web Build
+        Application.Quit();         //for Android or Windows Build
 
     }
   

@@ -23,8 +23,8 @@ public class Hero : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
     private Animator anim;
-    private AudioSource audioSource;
-    public AudioClip audioClip;
+    //private AudioSource audioSource;
+    //public AudioClip audioClip;
 
     void Awake()
     {
@@ -32,10 +32,7 @@ public class Hero : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        audioSource = GetComponent<AudioSource>();
-        //sprite = GetComponentInChildren<SpriteRenderer>();
-        //anim = GetComponentInChildren<Animator>();
-        //SceneManager.sceneLoaded += LevelLoaded;//Sing            //підписка на подію завантаження сцени    
+        //audioSource = GetComponent<AudioSource>();       
     }
 
     void Start()
@@ -140,7 +137,7 @@ public class Hero : MonoBehaviour
             SavePlayer();
             gameUI.SetCountGoldUI(gold);
             PlayerPrefs.SetInt("Gold", gold);           
-            audioSource.PlayOneShot(audioClip);
+            //audioSource.PlayOneShot(audioClip);
             Destroy(collision.gameObject);
         }
         if (collision.tag == "Food")
@@ -149,7 +146,7 @@ public class Hero : MonoBehaviour
             SavePlayer();
             gameUI.SetCountFoodUI(food);
             PlayerPrefs.SetInt("Food", food);
-            audioSource.PlayOneShot(audioClip);
+            //audioSource.PlayOneShot(audioClip);
             Destroy(collision.gameObject);
         }
         if (collision.tag == "Heart" && life < 3)
@@ -158,7 +155,7 @@ public class Hero : MonoBehaviour
             SavePlayer();
             gameUI.AddHeart();
             PlayerPrefs.SetInt("Life", life);
-            audioSource.PlayOneShot(audioClip);
+            //audioSource.PlayOneShot(audioClip);
             Destroy(collision.gameObject);
         }
         if (collision.tag == "BlusterCount")
@@ -167,7 +164,7 @@ public class Hero : MonoBehaviour
             SavePlayer();
             gameUI.SetCountBlusterUI(blusterCount);
             PlayerPrefs.SetInt("BlusterCount", blusterCount);
-            audioSource.PlayOneShot(audioClip);
+            //audioSource.PlayOneShot(audioClip);
             Destroy(collision.gameObject);
         }
 
@@ -263,7 +260,8 @@ public class Hero : MonoBehaviour
     }*/
     public void AttackMomile()
     {
-        Attack(true);
+        if (blusterCount > 0)
+            Attack(true);
     }
 
     void ResetMaterial()
