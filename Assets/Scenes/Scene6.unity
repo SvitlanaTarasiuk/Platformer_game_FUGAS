@@ -904,8 +904,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.08200073, y: -0.05300188}
-  m_SizeDelta: {x: -26.233, y: -4.536}
+  m_AnchoredPosition: {x: 0, y: -0.05000019}
+  m_SizeDelta: {x: -26, y: -4.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &506519308
 MonoBehaviour:
@@ -1720,8 +1720,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.11499977, y: -0.05300188}
-  m_SizeDelta: {x: -26.214, y: -4.536}
+  m_AnchoredPosition: {x: 0, y: -0.049999714}
+  m_SizeDelta: {x: -26, y: -4.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1078443206
 MonoBehaviour:
@@ -4226,10 +4226,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3602032720214723216, guid: 15b70dc2a66ed8a4aa31ff5eda7b9035, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -12.727173
-      objectReference: {fileID: 0}
     - target: {fileID: 3602032720214723223, guid: 15b70dc2a66ed8a4aa31ff5eda7b9035, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -4322,14 +4318,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 4342865922955484497, guid: 15b70dc2a66ed8a4aa31ff5eda7b9035, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 8.333588
-      objectReference: {fileID: 0}
-    - target: {fileID: 4814211317371036615, guid: 15b70dc2a66ed8a4aa31ff5eda7b9035, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -12.727173
-      objectReference: {fileID: 0}
     - target: {fileID: 5784289322855470830, guid: 15b70dc2a66ed8a4aa31ff5eda7b9035, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -4349,10 +4337,6 @@ PrefabInstance:
     - target: {fileID: 5914047688266122061, guid: 15b70dc2a66ed8a4aa31ff5eda7b9035, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Settings
-      objectReference: {fileID: 0}
-    - target: {fileID: 6325658938013227563, guid: 15b70dc2a66ed8a4aa31ff5eda7b9035, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -12.727173
       objectReference: {fileID: 0}
     - target: {fileID: 6542833105018242503, guid: 15b70dc2a66ed8a4aa31ff5eda7b9035, type: 3}
       propertyPath: m_IsActive
