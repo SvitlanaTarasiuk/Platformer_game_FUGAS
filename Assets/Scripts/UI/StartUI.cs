@@ -8,6 +8,7 @@ public class StartUI : MonoBehaviour
     [SerializeField] private GameObject panelSettingsMusic;
     [SerializeField] private GameObject panelMenu;
     [SerializeField] private GameObject panelLevels;
+    [SerializeField] private GameObject panelAboutMe;   
     public void NewGame()
     {     
         print("StartGame");
@@ -53,6 +54,12 @@ public class StartUI : MonoBehaviour
     public void Levels()
     {
         panelLevels.SetActive(true);
+        //SceneManager.LoadScene(9);
+
+    }
+    public void AboutMe()
+    {
+        panelAboutMe.SetActive(true);
         //SceneManager.LoadScene(9);
 
     }
