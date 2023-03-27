@@ -9,9 +9,11 @@ In it, a brave fox goes in search of adventures and treasures, incredible advent
 The main gameplay mechanic of the game is jumping, which helps to overcome most obstacles, such as various spikes, spiky ground and hanging platforms, fire or an abyss. The hero has a weapon - a blaster that shoots an electric charge and can kill dangerous creatures he meets or an evil troll at the end of the game. 
 During the game, the fox collects coins, electric charges for the blaster and food, which it immediately eats, leaving only bones.
 
-Hero management: 
+Managing a hero in Windows:
 - walk: right / left; 
 - jump - Space; 
 - shoot - Enter.
+
+There are also buttons to control the hero on Android.
 
 The game can be played online:https://tarasiuk-svitlana.itch.io/adventures-fox 
