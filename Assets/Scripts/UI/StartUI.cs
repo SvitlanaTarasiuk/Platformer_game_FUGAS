@@ -8,7 +8,8 @@ public class StartUI : MonoBehaviour
     [SerializeField] private GameObject panelSettingsMusic;
     [SerializeField] private GameObject panelMenu;
     [SerializeField] private GameObject panelLevels;
-    [SerializeField] private GameObject panelAboutMe;   
+    [SerializeField] private GameObject panelAboutMe;
+    [SerializeField] private GameObject panelCredits;
     public void NewGame()
     {     
         print("StartGame");
@@ -60,7 +61,11 @@ public class StartUI : MonoBehaviour
     public void AboutMe()
     {
         panelAboutMe.SetActive(true);
-        //SceneManager.LoadScene(9);
+
+    }
+    public void Credits()
+    {
+        panelCredits.SetActive(true);
 
     }
     //public void Rekords()
